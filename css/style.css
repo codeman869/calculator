@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Black+Ops+One|Merriweather|Ubuntu");
+.top-row {
+  margin-top: 50px;
+}
+
+.main {
+  background: grey;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px black;
+}
+
+body {
+  background: #1f1f1f1f;
+  font-family: Ubuntu;
+}
+
+#screen {
+  font-family: Black Ops One;
+  font-size: 2em;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  padding: 10px;
+  background: #00af4f;
+}
+
+.key {
+  font-family: Merriweather;
+  font-size: 2em;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background: #2f2f2f;
+  color: #fff;
+  padding: 2px;
+  box-shadow: 2px 2px 5px black;
+}
+
+.key:hover {
+  background: #0000FF;
+}

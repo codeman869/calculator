@@ -1,0 +1,63 @@
+.container-fluid
+  .col-md-4.col-md-offset-4
+    .page-header
+      h1.text-center A Basic Calculator
+        br
+        small Where order of operations matters
+.container-fluid.top-row
+  .row(ng-app="calculator")
+    .col-md-4
+    .col-md-4.main(ng-controller="MainController as ctrl")
+      .text-right#screen(ng-bind-html="ctrl.stack.join(\"\") | HTMLFilter" ng-keydown="console.log($event)")
+      .container-fluid(style="margin-top: 20px;")
+        .row
+          .col-md-3.col-md-offset-6
+            .text-center.key(ng-click="ctrl.clearOne()") C
+          .col-md-3
+            .text-center.key(ng-click="ctrl.allClear()") AC
+        .row(ng-repeat="key in ctrl.ops track by $index" ng-if="$index % 4 === 0")
+          .col-md-3(ng-repeat="i in [$index, $index+1,$index+2,$index+3]" ng-if="ctrl.ops[i] != null" )
+            .text-center.key(ng-bind-html="ctrl.ops[i].value | HTMLFilter" ng-click="ctrl.addToStack(ctrl.ops[i].id)")
+        .row(style="margin-top:5px;")
+          .col-md-3.col-md-offset-9
+            small.text-center Created by Cody
+        
+      //-         
+        .row(style="margin-top:2px;")
+          .col-md-3 
+            .text-center.key 7
+          .col-md-3 
+            .text-center.key 8
+          .col-md-3
+            .text-center.key 9
+          .col-md-3
+            .text-center.key &divide;
+        .row
+          .col-md-3
+            .text-center.key 4
+          .col-md-3
+            .text-center.key 5
+          .col-md-3
+            .text-center.key 6
+          .col-md-3
+            .text-center.key &times;
+        .row
+          .col-md-3
+            .text-center.key 1
+          .col-md-3
+            .text-center.key 2
+          .col-md-3
+            .text-center.key 3
+          .col-md-3
+            .text-center.key -
+        .row
+          .col-md-3
+            .text-center.key 0
+          .col-md-3
+            .text-center.key .
+          .col-md-3
+            .text-center.key =
+          .col-md-3
+            .text-center.key +
+    
+    .col-md-4
